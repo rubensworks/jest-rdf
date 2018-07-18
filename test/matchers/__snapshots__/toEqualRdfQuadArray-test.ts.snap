@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#toEqualRdfQuadArray should fail for quad arrays with different length 1`] = `"expected [ {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"}, {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"}, {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"} ] to equal [ {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"} ]"`;
+
+exports[`#toEqualRdfQuadArray should fail for quad arrays with equal length but different contents 1`] = `"expected s2 and s1 to be equal"`;
+
+exports[`#toEqualRdfQuadArray should not fail for equal quad arrays 1`] = `"expected [ {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"}, {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"}, {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"} ] not to equal [ {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"}, {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"}, {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"} ]"`;
