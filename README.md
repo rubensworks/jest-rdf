@@ -77,6 +77,16 @@ _Blank nodes are always considered equal._
 expect(namedNode('t1')).toEqualRdfTerm(namedNode('t2'));
 ```
 
+#### toEqualRdfTermArray
+
+Check if two RDF Term arrays are equal.
+
+Terms are compared under the semantics of _toEqualRdfTerm_.
+
+```js
+expect([namedNode('t1'), namedNode('t2')]).toEqualRdfTermArray([namedNode('t2'), namedNode('t3')]);
+```
+
 ## License
 This software is written by [Ruben Taelman](http://rubensworks.net/).
 
