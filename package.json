@@ -42,7 +42,7 @@
     "ts-jest": "^23.0.1",
     "tslint": "^5.8.0",
     "tslint-eslint-rules": "^5.3.1",
-    "typescript": "^2.6.2"
+    "typescript": "^3.0.1"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./index.js",

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rubensworks/jest-rdf.svg?branch=master)](https://travis-ci.org/rubensworks/jest-rdf)
 [![Coverage Status](https://coveralls.io/repos/github/rubensworks/jest-rdf/badge.svg?branch=master)](https://coveralls.io/github/rubensworks/jest-rdf?branch=master)
-[![npm version](https://badge.fury.io/js/jsonld-parser.svg)](https://www.npmjs.com/package/jest-rdf)
+[![npm version](https://badge.fury.io/js/jsonld-parser.svg)](https://www.npmjs.com/package/jest-rdf) [![Greenkeeper badge](https://badges.greenkeeper.io/rubensworks/jest-rdf.svg)](https://greenkeeper.io/)
 
 [Jest](https://jestjs.io/) test utilities for [RDFJS](https://github.com/rdfjs/representation-task-force/),
 including several new matchers.
