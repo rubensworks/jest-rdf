@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="1.2.0"></a>
+## [1.2.0](https://github.com/rubensworks/jest-rdf/compare/v1.1.0...v1.2.0) - 2018-09-04
+### Added
+- [Add toBeRdfIsomorphic matcher](https://github.com/rubensworks/jest-rdf/commit/d7b84acdf15519bcb17172d04c6b3053ef9f0045)
+
 <a name="1.1.0"></a>
 ## [1.1.0](https://github.com/rubensworks/jest-rdf/compare/v1.0.0...v1.1.0) - 2018-08-21
 ### Added
