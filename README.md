@@ -43,6 +43,23 @@ import "jest-rdf";
 
 ## API
 
+#### toBeRdfIsomorphic
+
+Check if two RDF graphs are [isomorphic](https://www.w3.org/TR/rdf11-concepts/#graph-isomorphism).
+An RDF graph is represented as an array of quads where the order of quads is not important.
+
+```js
+const g1 = [
+  quad(blankNode('b1'), namedNode('p1'), namedNode('o1'), namedNode('g1')),
+  quad(blankNode('b1'), namedNode('p2'), namedNode('o2'), namedNode('g2')),
+];
+const g2 = [
+  quad(blankNode('b2'), namedNode('p2'), namedNode('o2'), namedNode('g2')),
+  quad(blankNode('b2'), namedNode('p1'), namedNode('o1'), namedNode('g1')),
+];
+expect(g1).toBeRdfIsomorphic(g2);
+```
+
 #### toEqualRdfQuad
 
 Check if two RDF Quads are equal.
