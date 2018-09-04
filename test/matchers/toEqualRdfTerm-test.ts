@@ -1,4 +1,4 @@
-import {blankNode, namedNode, variable} from "rdf-data-model";
+import {blankNode, namedNode, variable} from "@rdfjs/data-model";
 import "../../index";
 
 describe('#toEqualRdfTerm', () => {

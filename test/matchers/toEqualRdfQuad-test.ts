@@ -1,4 +1,4 @@
-import {namedNode, quad} from "rdf-data-model";
+import {namedNode, quad} from "@rdfjs/data-model";
 import "../../index";
 
 describe('#toEqualRdfQuad', () => {

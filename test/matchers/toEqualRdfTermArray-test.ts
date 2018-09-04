@@ -1,4 +1,4 @@
-import {namedNode} from "rdf-data-model";
+import {namedNode} from "@rdfjs/data-model";
 import "../../index";
 
 describe('#toEqualRdfTermArray', () => {
