@@ -3,20 +3,34 @@ import * as RDF from "rdf-js";
 import {quadToStringQuad} from "rdf-string";
 
 function quadArrayToString(quadArray: RDF.Quad[]): string {
-  return '[ ' + quadArray.map((quad) => JSON.stringify(quadToStringQuad(quad))).join(', ') + ' ]';
+  return '[\n' + quadArray.map((quad) => '  ' + JSON.stringify(quadToStringQuad(quad))).join(',\n') + '\n]';
 }
 
 export default {
   toBeRdfIsomorphic(received: RDF.Quad[], actual: RDF.Quad[]) {
     if (!isomorphic(received, actual)) {
       return {
-        message: () => `expected ${quadArrayToString(received)} to be isomorphic with ${quadArrayToString(actual)}`,
+        message: () => `expected two graphs to be isomorphic.
+
+  Expected:
+${quadArrayToString(actual)}
+
+  Actual:
+${quadArrayToString(received)}
+`,
         pass: false,
       };
     }
 
     return {
-      message: () => `expected ${quadArrayToString(received)} not to be isomorphic with ${quadArrayToString(actual)}`,
+      message: () => `expected two graphs not to be isomorphic.
+
+  Expected:
+${quadArrayToString(actual)}
+
+  Actual:
+${quadArrayToString(received)}
+`,
       pass: true,
     };
   },
