@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.3.0"></a>
+## [v1.3.0](https://github.com/rubensworks/jest-rdf/compare/v1.2.0...v1.3.0) - 2018-11-08
+
+### Changed
+* [Update to generic RDFJS typings](https://github.com/rubensworks/jest-rdf/commit/9e7809fe611f46ee99dfac5856e649a6e76fa68b)
+* [Improve readability of isomorphic test failures](https://github.com/rubensworks/jest-rdf/commit/174ac4cad6288be0e67782d243c8dcde15bdc120)
+
 <a name="1.2.0"></a>
 ## [1.2.0](https://github.com/rubensworks/jest-rdf/compare/v1.1.0...v1.2.0) - 2018-09-04
 ### Added
