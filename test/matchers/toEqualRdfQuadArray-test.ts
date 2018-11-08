@@ -1,4 +1,5 @@
-import {namedNode, quad} from "@rdfjs/data-model";
+import {blankNode, namedNode, quad} from "@rdfjs/data-model";
+import * as RDF from "rdf-js";
 import "../../index";
 
 describe('#toEqualRdfQuadArray', () => {
@@ -40,6 +41,48 @@ describe('#toEqualRdfQuadArray', () => {
         namedNode('p3'),
         namedNode('o3'),
         namedNode('g3'),
+      ),
+    ]);
+  });
+
+  it('should succeed for equal generalized quad arrays', () => {
+    return expect([
+      quad<RDF.BaseQuad>(
+        blankNode('s1'),
+        blankNode('p1'),
+        blankNode('o1'),
+        blankNode('g1'),
+      ),
+      quad<RDF.BaseQuad>(
+        blankNode('s2'),
+        blankNode('p2'),
+        blankNode('o2'),
+        blankNode('g2'),
+      ),
+      quad<RDF.BaseQuad>(
+        blankNode('s3'),
+        blankNode('p3'),
+        blankNode('o3'),
+        blankNode('g3'),
+      ),
+    ]).toEqualRdfQuadArray([
+      quad<RDF.BaseQuad>(
+        blankNode('s1'),
+        blankNode('p1'),
+        blankNode('o1'),
+        blankNode('g1'),
+      ),
+      quad<RDF.BaseQuad>(
+        blankNode('s2'),
+        blankNode('p2'),
+        blankNode('o2'),
+        blankNode('g2'),
+      ),
+      quad<RDF.BaseQuad>(
+        blankNode('s3'),
+        blankNode('p3'),
+        blankNode('o3'),
+        blankNode('g3'),
       ),
     ]);
   });

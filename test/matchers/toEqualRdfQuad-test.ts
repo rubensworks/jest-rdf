@@ -1,4 +1,5 @@
-import {namedNode, quad} from "@rdfjs/data-model";
+import {blankNode, namedNode, quad} from "@rdfjs/data-model";
+import * as RDF from "rdf-js";
 import "../../index";
 
 describe('#toEqualRdfQuad', () => {
@@ -13,6 +14,20 @@ describe('#toEqualRdfQuad', () => {
       namedNode('p'),
       namedNode('o'),
       namedNode('g'),
+    ));
+  });
+
+  it('should succeed for equal generalized quads', () => {
+    return expect(quad<RDF.BaseQuad>(
+      blankNode('s'),
+      blankNode('p'),
+      blankNode('o'),
+      blankNode('g'),
+    )).toEqualRdfQuad(quad<RDF.BaseQuad>(
+      blankNode('s'),
+      blankNode('p'),
+      blankNode('o'),
+      blankNode('g'),
     ));
   });
 

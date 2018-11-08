@@ -5,9 +5,9 @@ declare global {
   namespace jest {
     // tslint:disable-next-line:interface-name
     interface Matchers<R> {
-      toBeRdfIsomorphic: (actual: RDF.Quad[]) => R;
-      toEqualRdfQuad: (actual: RDF.Quad) => R;
-      toEqualRdfQuadArray: (actual: RDF.Quad[]) => R;
+      toBeRdfIsomorphic: (actual: RDF.BaseQuad[]) => R;
+      toEqualRdfQuad: (actual: RDF.BaseQuad) => R;
+      toEqualRdfQuadArray: (actual: RDF.BaseQuad[]) => R;
       toEqualRdfTerm: (actual: RDF.Term) => R;
       toEqualRdfTermArray: (actual: RDF.Term[]) => R;
     }

@@ -2,12 +2,12 @@ import * as RDF from "rdf-js";
 import {quadToStringQuad} from "rdf-string";
 import M from "./toEqualRdfQuad";
 
-function quadArrayToString(quadArray: RDF.Quad[]): string {
+function quadArrayToString<Q extends RDF.BaseQuad = RDF.Quad>(quadArray: Q[]): string {
   return '[ ' + quadArray.map((quad) => JSON.stringify(quadToStringQuad(quad))).join(', ') + ' ]';
 }
 
 export default {
-  toEqualRdfQuadArray(received: RDF.Quad[], actual: RDF.Quad[]) {
+  toEqualRdfQuadArray<Q extends RDF.BaseQuad = RDF.Quad>(received: Q[], actual: Q[]) {
     if (received.length !== actual.length) {
       return {
         message: () => `expected ${quadArrayToString(received)} to equal ${quadArrayToString(actual)}`,

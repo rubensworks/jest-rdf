@@ -3,7 +3,7 @@ import {quadToStringQuad} from "rdf-string";
 import M from "./toEqualRdfTerm";
 
 export default {
-  toEqualRdfQuad(received: RDF.Quad, actual: RDF.Quad) {
+  toEqualRdfQuad<Q extends RDF.BaseQuad = RDF.Quad>(received: Q, actual: Q) {
     const s = M.toEqualRdfTerm(received.subject, actual.subject);
     if (!s.pass) {
       return s;
