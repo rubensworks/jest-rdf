@@ -33,7 +33,7 @@
   ],
   "devDependencies": {
     "@types/jest": "^23.3.0",
-    "@types/node": "^10.9.4",
+    "@types/node": "^11.9.0",
     "coveralls": "^3.0.0",
     "jest": "^23.4.1",
     "manual-git-changelog": "^1.0.0",
