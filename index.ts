@@ -10,6 +10,8 @@ declare global {
       toEqualRdfQuadArray: (actual: RDF.BaseQuad[]) => R;
       toEqualRdfTerm: (actual: RDF.Term) => R;
       toEqualRdfTermArray: (actual: RDF.Term[]) => R;
+      toHaveQuad: (actual: RDF.BaseQuad) => R;
+      toHaveQuads: (size: number) => R;
     }
   }
 }

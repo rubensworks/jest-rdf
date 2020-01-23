@@ -104,6 +104,26 @@ Terms are compared under the semantics of _toEqualRdfTerm_.
 expect([namedNode('t1'), namedNode('t2')]).toEqualRdfTermArray([namedNode('t2'), namedNode('t3')]);
 ```
 
+#### toHaveQuad
+
+Check if a dataset contains a quad.
+
+```js
+const q = quad(namedNode('s1'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
+const d = dataset([q]);
+expect(d).toHaveQuad(q);
+```
+
+#### toHaveQuads
+
+Check if a dataset contains a certain number of quads.
+
+```js
+const q = quad(namedNode('s1'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
+const d = dataset([q]);
+expect(d).toHaveQuads(1);
+```
+
 ## License
 This software is written by [Ruben Taelman](http://rubensworks.net/).
 
