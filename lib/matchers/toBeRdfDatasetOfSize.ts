@@ -1,7 +1,7 @@
 import * as RDF from 'rdf-js';
 
 export default {
-  toHaveQuads<Q extends RDF.BaseQuad = RDF.Quad>(dataset: RDF.DatasetCore<Q>, expected: number) {
+  toBeRdfDatasetOfSize<Q extends RDF.BaseQuad = RDF.Quad>(dataset: RDF.DatasetCore<Q>, expected: number) {
     const actual = dataset.size;
 
     if (expected !== actual) {

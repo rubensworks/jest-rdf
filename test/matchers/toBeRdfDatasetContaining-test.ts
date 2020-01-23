@@ -16,12 +16,12 @@ const quad2 = quad(
   defaultGraph(),
 );
 
-describe('#toHaveQuad', () => {
+describe('#toBeRdfDatasetContaining', () => {
   it('should succeed if the dataset has a quad', () => {
-    return expect(datasetFactory([quad1])).toHaveQuad(quad1);
+    return expect(datasetFactory([quad1])).toBeRdfDatasetContaining(quad1);
   });
 
   it('should not succeed if the dataset does not have a quad', () => {
-    return expect(datasetFactory([quad1])).not.toHaveQuad(quad2);
+    return expect(datasetFactory([quad1])).not.toBeRdfDatasetContaining(quad2);
   });
 });
