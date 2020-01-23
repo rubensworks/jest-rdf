@@ -106,18 +106,19 @@ expect([namedNode('t1'), namedNode('t2')]).toEqualRdfTermArray([namedNode('t2'),
 
 #### toBeRdfDatasetContaining
 
-Check if a dataset contains one or more quads.
+Check if a dataset contains _all_ of the given quads.
 
 ```js
 const q1 = quad(namedNode('s1'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
 const q2 = quad(namedNode('s2'), namedNode('p2'), namedNode('o2'), namedNode('g2'));
 const d = dataset([q1, q2]);
+expect(d).toBeRdfDatasetContaining(q1);
 expect(d).toBeRdfDatasetContaining(q1, q2);
 ```
 
 #### toBeRdfDatasetMatching
 
-Check if a dataset contains *exactly* the given amount of matching quads (default 1).
+Check if a dataset contains _exactly_ the given amount of matching quads (default 1).
 
 ```js
 const q1 = quad(namedNode('s'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
@@ -129,7 +130,7 @@ expect(d).toBeRdfDatasetMatching({ subject: namedNode('s') }, 2);
 
 #### toBeRdfDatasetOfSize
 
-Check if a dataset contains a certain number of quads.
+Check if a dataset contains _exactly_ the given amount of quads.
 
 ```js
 const q = quad(namedNode('s1'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
