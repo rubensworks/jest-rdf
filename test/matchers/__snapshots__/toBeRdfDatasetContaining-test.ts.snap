@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#toBeRdfDatasetContaining should fail if the dataset does not have a quad 1`] = `"expected dataset to have quads [ {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"\\"} ]"`;
+
+exports[`#toBeRdfDatasetContaining should fail if the dataset does not have multiple quads 1`] = `"expected dataset to have quads [ {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"\\"}, {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"\\\\\\"o\\\\\\"\\",\\"graph\\":\\"\\"} ]"`;
+
+exports[`#toBeRdfDatasetContaining should not fail if the dataset does have a quad 1`] = `"expected dataset to not have quads [ {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"} ]"`;
+
+exports[`#toBeRdfDatasetContaining should not fail if the dataset does have multiple quads 1`] = `"expected dataset to not have quads [ {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}, {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"\\"} ]"`;

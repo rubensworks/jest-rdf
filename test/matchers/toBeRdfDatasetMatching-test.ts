@@ -31,4 +31,16 @@ describe('#toBeRdfDatasetMatching', () => {
   it('should not succeed if the dataset does not match', () => {
     return expect(datasetFactory([quad1, quad2, quad3])).not.toBeRdfDatasetMatching({ subject: namedNode('s') });
   });
+
+  it('should fail if the dataset does not match', () => {
+    return expect(() => expect([
+      expect(datasetFactory([quad1, quad2, quad3])).toBeRdfDatasetMatching({ subject: namedNode('s') }),
+    ])).toThrowErrorMatchingSnapshot();
+  });
+
+  it('should not fail if the dataset matches', () => {
+    return expect(() => expect([
+      expect(datasetFactory([quad1, quad2, quad3])).not.toBeRdfDatasetMatching({ subject: namedNode('s') }, 3),
+    ])).toThrowErrorMatchingSnapshot();
+  });
 });
