@@ -106,12 +106,13 @@ expect([namedNode('t1'), namedNode('t2')]).toEqualRdfTermArray([namedNode('t2'),
 
 #### toBeRdfDatasetContaining
 
-Check if a dataset contains a quad.
+Check if a dataset contains one or more quads.
 
 ```js
-const q = quad(namedNode('s1'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
-const d = dataset([q]);
-expect(d).toBeRdfDatasetContaining(q);
+const q1 = quad(namedNode('s1'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
+const q2 = quad(namedNode('s2'), namedNode('p2'), namedNode('o2'), namedNode('g2'));
+const d = dataset([q1, q2]);
+expect(d).toBeRdfDatasetContaining(q1, q2);
 ```
 
 #### toBeRdfDatasetOfSize
