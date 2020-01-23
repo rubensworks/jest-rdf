@@ -117,7 +117,7 @@ expect(d).toBeRdfDatasetContaining(q1, q2);
 
 #### toBeRdfDatasetMatching
 
-Check if a dataset contains a certain number of matching quads (default 1).
+Check if a dataset contains *exactly* the given amount of matching quads (default 1).
 
 ```js
 const q1 = quad(namedNode('s'), namedNode('p1'), namedNode('o1'), namedNode('g1'));
