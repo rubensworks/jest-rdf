@@ -1,11 +1,13 @@
 import * as RDF from "rdf-js";
 import matchers from './lib/matchers';
+import { IQuadTerms } from './lib/matchers/toBeRdfDatasetMatching';
 
 declare global {
   namespace jest {
     // tslint:disable-next-line:interface-name
     interface Matchers<R> {
       toBeRdfDatasetContaining: (...actual: RDF.BaseQuad[]) => R;
+      toBeRdfDatasetMatching: (match: IQuadTerms<RDF.BaseQuad>, matches?: number) => R;
       toBeRdfDatasetOfSize: (size: number) => R;
       toBeRdfIsomorphic: (actual: RDF.BaseQuad[]) => R;
       toEqualRdfQuad: (actual: RDF.BaseQuad) => R;

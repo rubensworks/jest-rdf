@@ -1,4 +1,5 @@
 import toBeRdfDatasetContaining from './toBeRdfDatasetContaining';
+import toBeRdfDatasetMatching from './toBeRdfDatasetMatching';
 import toBeRdfDatasetOfSize from './toBeRdfDatasetOfSize';
 import toBeRdfIsomorphic from './toBeRdfIsomorphic';
 import toEqualRdfQuad from './toEqualRdfQuad';
@@ -8,6 +9,7 @@ import toEqualRdfTermArray from './toEqualRdfTermArray';
 
 export default [
   toBeRdfDatasetContaining,
+  toBeRdfDatasetMatching,
   toBeRdfDatasetOfSize,
   toBeRdfIsomorphic,
   toEqualRdfTerm,
