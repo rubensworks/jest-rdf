@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.4.0"></a>
+## [v1.4.0](https://github.com/rubensworks/jest-rdf/compare/v1.3.0...v1.4.0) - 2020-01-24
+
+### Added
+* [Add dataset containing, matching, and size matchers (#19)](https://github.com/rubensworks/jest-rdf/commit/3d658d2a1f0fd70a158ee357e54c53772487e3f2)
+
 <a name="v1.3.0"></a>
 ## [v1.3.0](https://github.com/rubensworks/jest-rdf/compare/v1.2.0...v1.3.0) - 2018-11-08
 
