@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#toBeRdfDatasetOfSize should fail if the dataset does not have the right number of quads 1`] = `"expected dataset to have 2 quads, 1 received"`;
+
+exports[`#toBeRdfDatasetOfSize should not fail if the dataset has the right number of quads 1`] = `"expected dataset to not have exactly 2 quads"`;

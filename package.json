@@ -32,12 +32,16 @@
     "test"
   ],
   "devDependencies": {
+    "@rdfjs/data-model": "^1.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^13.1.0",
+    "@types/rdf-dataset-indexed": "^0.4.0",
+    "@types/rdf-js": "^2.0.8",
     "coveralls": "^3.0.0",
     "jest": "^24.3.0",
     "manual-git-changelog": "^1.0.0",
     "pre-commit": "^1.2.2",
+    "rdf-dataset-indexed": "^0.4.0",
     "ts-jest": "^24.0.0",
     "tslint": "^5.8.0",
     "tslint-eslint-rules": "^5.3.1",
