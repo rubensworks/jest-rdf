@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.5.0"></a>
+## [v1.5.0](https://github.com/rubensworks/jest-rdf/compare/v1.4.0...v1.5.0) - 2020-01-24
+
+### Added
+* [Allow toBeRdfIsomorphic to take any iterable (#20)](https://github.com/rubensworks/jest-rdf/commit/f9011cb1f382bf777ea78b267b91e316d2a77cb6)
+
 <a name="v1.4.0"></a>
 ## [v1.4.0](https://github.com/rubensworks/jest-rdf/compare/v1.3.0...v1.4.0) - 2020-01-24
 
