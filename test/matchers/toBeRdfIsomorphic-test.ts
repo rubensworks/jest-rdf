@@ -1,4 +1,5 @@
 import {blankNode, namedNode, quad} from "@rdfjs/data-model";
+import datasetFactory = require('rdf-dataset-indexed');
 import * as RDF from "rdf-js";
 import "../../index";
 
@@ -127,6 +128,48 @@ describe('#toBeRdfIsomorphic', () => {
         namedNode('g1'),
       ),
     ]);
+  });
+
+  it('should work with iterables', () => {
+    return expect(datasetFactory([
+      quad(
+        blankNode('s1a'),
+        namedNode('p1'),
+        namedNode('o1'),
+        namedNode('g1'),
+      ),
+      quad(
+        namedNode('s2'),
+        namedNode('p2'),
+        namedNode('o2'),
+        namedNode('g2'),
+      ),
+      quad(
+        namedNode('s3'),
+        namedNode('p3'),
+        namedNode('o3'),
+        namedNode('g3'),
+      ),
+    ])).toBeRdfIsomorphic(datasetFactory([
+      quad(
+        blankNode('s1b'),
+        namedNode('p1'),
+        namedNode('o1'),
+        namedNode('g1'),
+      ),
+      quad(
+        namedNode('s2'),
+        namedNode('p2'),
+        namedNode('o2'),
+        namedNode('g2'),
+      ),
+      quad(
+        namedNode('s3'),
+        namedNode('p3'),
+        namedNode('o3'),
+        namedNode('g3'),
+      ),
+    ]));
   });
 
   it('should not fail for equal quad arrays', () => {

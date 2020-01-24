@@ -7,16 +7,19 @@ function quadArrayToString<Q extends RDF.BaseQuad = RDF.Quad>(quadArray: Q[]): s
 }
 
 export default {
-  toBeRdfIsomorphic<Q extends RDF.BaseQuad = RDF.Quad>(received: Q[], actual: Q[]) {
-    if (!isomorphic(received, actual)) {
+  toBeRdfIsomorphic<Q extends RDF.BaseQuad = RDF.Quad>(received: Iterable<Q>, actual: Iterable<Q>) {
+    const receivedArray = [...received];
+    const actualArray = [...actual];
+
+    if (!isomorphic(receivedArray, actualArray)) {
       return {
         message: () => `expected two graphs to be isomorphic.
 
   Expected:
-${quadArrayToString(actual)}
+${quadArrayToString(actualArray)}
 
   Actual:
-${quadArrayToString(received)}
+${quadArrayToString(receivedArray)}
 `,
         pass: false,
       };
@@ -26,10 +29,10 @@ ${quadArrayToString(received)}
       message: () => `expected two graphs not to be isomorphic.
 
   Expected:
-${quadArrayToString(actual)}
+${quadArrayToString(actualArray)}
 
   Actual:
-${quadArrayToString(received)}
+${quadArrayToString(receivedArray)}
 `,
       pass: true,
     };

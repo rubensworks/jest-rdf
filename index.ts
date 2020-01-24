@@ -9,7 +9,7 @@ declare global {
       toBeRdfDatasetContaining: (...actual: RDF.BaseQuad[]) => R;
       toBeRdfDatasetMatching: (match: IQuadTerms<RDF.BaseQuad>, matches?: number) => R;
       toBeRdfDatasetOfSize: (size: number) => R;
-      toBeRdfIsomorphic: (actual: RDF.BaseQuad[]) => R;
+      toBeRdfIsomorphic: (actual: Iterable<RDF.BaseQuad>) => R;
       toEqualRdfQuad: (actual: RDF.BaseQuad) => R;
       toEqualRdfQuadArray: (actual: RDF.BaseQuad[]) => R;
       toEqualRdfTerm: (actual: RDF.Term) => R;
