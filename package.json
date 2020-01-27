@@ -48,9 +48,9 @@
     "typescript": "^3.0.1"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./index.js",
+    "setupFilesAfterEnv": [ "./index.js" ],
     "transform": {
-      "^.+\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.ts$": "ts-jest"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
