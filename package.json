@@ -33,7 +33,7 @@
   ],
   "devDependencies": {
     "@rdfjs/data-model": "^1.1.2",
-    "@types/jest": "^24.9.1",
+    "@types/jest": "^25.1.0",
     "@types/node": "^13.1.0",
     "@types/rdf-dataset-indexed": "^0.4.3",
     "@types/rdf-js": "^2.0.11",
