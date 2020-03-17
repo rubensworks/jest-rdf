@@ -43,7 +43,7 @@
     "pre-commit": "^1.2.2",
     "rdf-dataset-indexed": "^0.4.0",
     "ts-jest": "^25.1.0",
-    "tslint": "^5.8.0",
+    "tslint": "^6.0.0",
     "tslint-eslint-rules": "^5.3.1",
     "typescript": "^3.0.1"
   },
