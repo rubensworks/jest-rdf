@@ -20,7 +20,7 @@ you'll have to make sure that they are imported.
 This can be done by adding the following entry to your Jest configuration:
 ```json
 "jest": {
-  "setupTestFrameworkScriptFile": "jest-rdf"
+  "setupFilesAfterEnv": [ "jest-rdf" ]
 }
 ```
 
