@@ -1,359 +1,361 @@
-import {blankNode, namedNode, quad} from "@rdfjs/data-model";
+import { DataFactory } from 'rdf-data-factory';
 import datasetFactory = require('rdf-dataset-indexed');
 import * as RDF from "rdf-js";
 import "../../index";
 
+const DF = new DataFactory();
+
 describe('#toBeRdfIsomorphic', () => {
   it('should succeed for equal quad arrays', () => {
     return expect([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]).toBeRdfIsomorphic([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]);
   });
 
   it('should succeed for equal generalized quad arrays', () => {
     return expect([
-      quad<RDF.BaseQuad>(
-        blankNode('s1'),
-        blankNode('p1'),
-        blankNode('o1'),
-        blankNode('g1'),
+      new DataFactory<RDF.BaseQuad>().quad(
+        DF.blankNode('s1'),
+        DF.blankNode('p1'),
+        DF.blankNode('o1'),
+        DF.blankNode('g1'),
       ),
-      quad<RDF.BaseQuad>(
-        blankNode('s2'),
-        blankNode('p2'),
-        blankNode('o2'),
-        blankNode('g2'),
+      new DataFactory<RDF.BaseQuad>().quad(
+        DF.blankNode('s2'),
+        DF.blankNode('p2'),
+        DF.blankNode('o2'),
+        DF.blankNode('g2'),
       ),
-      quad<RDF.BaseQuad>(
-        blankNode('s3'),
-        blankNode('p3'),
-        blankNode('o3'),
-        blankNode('g3'),
+      new DataFactory<RDF.BaseQuad>().quad(
+        DF.blankNode('s3'),
+        DF.blankNode('p3'),
+        DF.blankNode('o3'),
+        DF.blankNode('g3'),
       ),
     ]).toBeRdfIsomorphic([
-      quad<RDF.BaseQuad>(
-        blankNode('s1'),
-        blankNode('p1'),
-        blankNode('o1'),
-        blankNode('g1'),
+      new DataFactory<RDF.BaseQuad>().quad(
+        DF.blankNode('s1'),
+        DF.blankNode('p1'),
+        DF.blankNode('o1'),
+        DF.blankNode('g1'),
       ),
-      quad<RDF.BaseQuad>(
-        blankNode('s2'),
-        blankNode('p2'),
-        blankNode('o2'),
-        blankNode('g2'),
+      new DataFactory<RDF.BaseQuad>().quad(
+        DF.blankNode('s2'),
+        DF.blankNode('p2'),
+        DF.blankNode('o2'),
+        DF.blankNode('g2'),
       ),
-      quad<RDF.BaseQuad>(
-        blankNode('s3'),
-        blankNode('p3'),
-        blankNode('o3'),
-        blankNode('g3'),
+      new DataFactory<RDF.BaseQuad>().quad(
+        DF.blankNode('s3'),
+        DF.blankNode('p3'),
+        DF.blankNode('o3'),
+        DF.blankNode('g3'),
       ),
     ]);
   });
 
   it('should succeed for isomorphic quad arrays', () => {
     return expect([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        blankNode('b1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.blankNode('b1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        blankNode('b1'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.blankNode('b1'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        blankNode('b1'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.blankNode('b1'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]).toBeRdfIsomorphic([
-      quad(
-        blankNode('b2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.blankNode('b2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        blankNode('b2'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.blankNode('b2'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        blankNode('b2'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.blankNode('b2'),
+        DF.namedNode('g1'),
       ),
     ]);
   });
 
   it('should work with iterables', () => {
     return expect(datasetFactory([
-      quad(
-        blankNode('s1a'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.blankNode('s1a'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ])).toBeRdfIsomorphic(datasetFactory([
-      quad(
-        blankNode('s1b'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.blankNode('s1b'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]));
   });
 
   it('should not fail for equal quad arrays', () => {
     return expect(() => expect([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]).not.toBeRdfIsomorphic([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ])).toThrowErrorMatchingSnapshot();
   });
 
   it('should not succeed for quad arrays with different length', () => {
     return expect([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]).not.toBeRdfIsomorphic([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
     ]);
   });
 
   it('should fail for quad arrays with different length', () => {
     return expect(() => expect([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]).toBeRdfIsomorphic([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
     ])).toThrowErrorMatchingSnapshot();
   });
 
   it('should not succeed for quad arrays with equal length but different contents', () => {
     return expect([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]).not.toBeRdfIsomorphic([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
     ]);
   });
 
   it('should fail for quad arrays with equal length but different contents', () => {
     return expect(() => expect([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s2'),
-        namedNode('p2'),
-        namedNode('o2'),
-        namedNode('g2'),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
       ),
-      quad(
-        namedNode('s3'),
-        namedNode('p3'),
-        namedNode('o3'),
-        namedNode('g3'),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]).toBeRdfIsomorphic([
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
-      quad(
-        namedNode('s1'),
-        namedNode('p1'),
-        namedNode('o1'),
-        namedNode('g1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
       ),
     ])).toThrowErrorMatchingSnapshot();
   });

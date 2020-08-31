@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#toBeRdfDatasetMatching should fail if the dataset does not match 1`] = `"expected dataset to match {\\"subject\\":{\\"value\\":\\"s\\"}} once"`;
+exports[`#toBeRdfDatasetMatching should fail if the dataset does not match 1`] = `"expected dataset to match {\\"subject\\":{\\"termType\\":\\"NamedNode\\",\\"value\\":\\"s\\"}} once"`;
 
-exports[`#toBeRdfDatasetMatching should not fail if the dataset matches 1`] = `"expected dataset to not match {\\"subject\\":{\\"value\\":\\"s\\"}} 3 times"`;
+exports[`#toBeRdfDatasetMatching should not fail if the dataset matches 1`] = `"expected dataset to not match {\\"subject\\":{\\"termType\\":\\"NamedNode\\",\\"value\\":\\"s\\"}} 3 times"`;

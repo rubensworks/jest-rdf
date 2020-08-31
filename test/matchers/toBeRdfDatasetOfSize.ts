@@ -1,19 +1,21 @@
-import { defaultGraph, namedNode, quad } from '@rdfjs/data-model';
+import { DataFactory } from 'rdf-data-factory';
 import datasetFactory = require('rdf-dataset-indexed');
 import '../../index';
 
-const quad1 = quad(
-  namedNode('s'),
-  namedNode('p'),
-  namedNode('o'),
-  namedNode('g'),
+const DF = new DataFactory();
+
+const quad1 = DF.quad(
+  DF.namedNode('s'),
+  DF.namedNode('p'),
+  DF.namedNode('o'),
+  DF.namedNode('g'),
 );
 
-const quad2 = quad(
-  namedNode('s'),
-  namedNode('p'),
-  namedNode('o'),
-  defaultGraph(),
+const quad2 = DF.quad(
+  DF.namedNode('s'),
+  DF.namedNode('p'),
+  DF.namedNode('o'),
+  DF.defaultGraph(),
 );
 
 describe('#toBeRdfDatasetOfSize', () => {

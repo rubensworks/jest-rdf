@@ -1,52 +1,54 @@
-import {blankNode, namedNode, variable} from "@rdfjs/data-model";
+import { DataFactory } from 'rdf-data-factory';
 import "../../index";
+
+const DF = new DataFactory();
 
 describe('#toEqualRdfTerm', () => {
   it('should succeed for equal named nodes', () => {
-    return expect(namedNode('a')).toEqualRdfTerm(namedNode('a'));
+    return expect(DF.namedNode('a')).toEqualRdfTerm(DF.namedNode('a'));
   });
 
   it('should not succeed for non-equal named nodes', () => {
-    return expect(namedNode('a')).not.toEqualRdfTerm(namedNode('b'));
+    return expect(DF.namedNode('a')).not.toEqualRdfTerm(DF.namedNode('b'));
   });
 
   it('should not succeed for a named node and a variable', () => {
-    return expect(namedNode('a')).not.toEqualRdfTerm(variable('a'));
+    return expect(DF.namedNode('a')).not.toEqualRdfTerm(DF.variable('a'));
   });
 
   it('should not fail for equal named nodes', () => {
-    return expect(() => expect(namedNode('a')).not.toEqualRdfTerm(namedNode('a'))).toThrowErrorMatchingSnapshot();
+    return expect(() => expect(DF.namedNode('a')).not.toEqualRdfTerm(DF.namedNode('a'))).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail for non-equal named nodes', () => {
-    return expect(() => expect(namedNode('a')).toEqualRdfTerm(namedNode('b'))).toThrowErrorMatchingSnapshot();
+    return expect(() => expect(DF.namedNode('a')).toEqualRdfTerm(DF.namedNode('b'))).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail for a named node and a variable', () => {
-    return expect(() => expect(namedNode('a')).toEqualRdfTerm(variable('a'))).toThrowErrorMatchingSnapshot();
+    return expect(() => expect(DF.namedNode('a')).toEqualRdfTerm(DF.variable('a'))).toThrowErrorMatchingSnapshot();
   });
 
   it('should succeed for equal blank nodes', () => {
-    return expect(blankNode('a')).toEqualRdfTerm(blankNode('a'));
+    return expect(DF.blankNode('a')).toEqualRdfTerm(DF.blankNode('a'));
   });
 
   it('should succeed for non-equal blank nodes', () => {
-    return expect(blankNode('a')).toEqualRdfTerm(blankNode('b'));
+    return expect(DF.blankNode('a')).toEqualRdfTerm(DF.blankNode('b'));
   });
 
   it('should not succeed for a blank node and a variable', () => {
-    return expect(blankNode('a')).not.toEqualRdfTerm(variable('a'));
+    return expect(DF.blankNode('a')).not.toEqualRdfTerm(DF.variable('a'));
   });
 
   it('should not fail for equal blank nodes', () => {
-    return expect(() => expect(blankNode('a')).not.toEqualRdfTerm(blankNode('a'))).toThrowErrorMatchingSnapshot();
+    return expect(() => expect(DF.blankNode('a')).not.toEqualRdfTerm(DF.blankNode('a'))).toThrowErrorMatchingSnapshot();
   });
 
   it('should not fail for non-equal blank nodes', () => {
-    return expect(() => expect(blankNode('a')).not.toEqualRdfTerm(blankNode('b'))).toThrowErrorMatchingSnapshot();
+    return expect(() => expect(DF.blankNode('a')).not.toEqualRdfTerm(DF.blankNode('b'))).toThrowErrorMatchingSnapshot();
   });
 
   it('should fail for a blank node and a variable', () => {
-    return expect(() => expect(blankNode('a')).toEqualRdfTerm(variable('a'))).toThrowErrorMatchingSnapshot();
+    return expect(() => expect(DF.blankNode('a')).toEqualRdfTerm(DF.variable('a'))).toThrowErrorMatchingSnapshot();
   });
 });
