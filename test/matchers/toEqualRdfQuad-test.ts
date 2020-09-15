@@ -102,4 +102,108 @@ describe('#toEqualRdfQuad', () => {
       DF.namedNode('g2'),
     ));
   });
+
+  it('should succeed for equal quads nodes', () => {
+    return expect(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    )).toEqualRdfQuad(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    ));
+  });
+
+  it('should succeed for equal nested quads nodes', () => {
+    return expect(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.quad(
+        DF.namedNode('s'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g'),
+    )).toEqualRdfQuad(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.quad(
+        DF.namedNode('s'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g'),
+    ));
+  });
+
+  it('should not succeed for non-equal quads', () => {
+    return expect(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    )).not.toEqualRdfQuad(DF.quad(
+      DF.namedNode('s1'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    ));
+  });
+
+  it('should not succeed for non-equal nested quads', () => {
+    return expect(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.quad(
+        DF.namedNode('s'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g'),
+    )).not.toEqualRdfQuad(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g'),
+    ));
+  });
+
+  it('should not fail for equal quads', () => {
+    return expect(() => expect(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    )).not.toEqualRdfQuad(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    ))).toThrowErrorMatchingSnapshot();
+  });
+
+  it('should fail for non-equal quads', () => {
+    return expect(() => expect(DF.quad(
+      DF.namedNode('s'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    )).toEqualRdfQuad(DF.quad(
+      DF.namedNode('s1'),
+      DF.namedNode('p'),
+      DF.namedNode('o'),
+      DF.namedNode('g'),
+    ))).toThrowErrorMatchingSnapshot();
+  });
 });

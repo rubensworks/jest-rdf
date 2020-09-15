@@ -48,6 +48,110 @@ describe('#toBeRdfIsomorphic', () => {
     ]);
   });
 
+  it('should succeed for equal quad arrays with nested quads', () => {
+    return expect([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s2'),
+          DF.namedNode('p2'),
+          DF.namedNode('o2'),
+          DF.namedNode('g2'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]).toBeRdfIsomorphic([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s2'),
+          DF.namedNode('p2'),
+          DF.namedNode('o2'),
+          DF.namedNode('g2'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]);
+  });
+
+  it('should succeed for equal quad arrays with nested quads with blank nodes', () => {
+    return expect([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s2'),
+          DF.namedNode('p2'),
+          DF.blankNode('OOO1'),
+          DF.namedNode('g2'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]).toBeRdfIsomorphic([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s2'),
+          DF.namedNode('p2'),
+          DF.blankNode('OOO2'),
+          DF.namedNode('g2'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]);
+  });
+
   it('should succeed for equal generalized quad arrays', () => {
     return expect([
       new DataFactory<RDF.BaseQuad>().quad(
@@ -314,6 +418,58 @@ describe('#toBeRdfIsomorphic', () => {
         DF.namedNode('p1'),
         DF.namedNode('o1'),
         DF.namedNode('g1'),
+      ),
+    ]);
+  });
+
+  it('should not succeed for quad arrays with nested quads with equal length but different contents', () => {
+    return expect([
+      DF.quad(
+        DF.namedNode('s1A'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s2'),
+          DF.namedNode('p2'),
+          DF.namedNode('o2'),
+          DF.namedNode('g2'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]).not.toBeRdfIsomorphic([
+      DF.quad(
+        DF.namedNode('s1B'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s2'),
+          DF.namedNode('p2'),
+          DF.namedNode('o2'),
+          DF.namedNode('g2'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]);
   });

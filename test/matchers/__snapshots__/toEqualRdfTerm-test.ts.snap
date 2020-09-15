@@ -1,13 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`#toEqualRdfTerm should fail for a blank node and a quads 1`] = `"expected _:a and <<s p o g>> to be equal"`;
+
 exports[`#toEqualRdfTerm should fail for a blank node and a variable 1`] = `"expected _:a and ?a to be equal"`;
 
 exports[`#toEqualRdfTerm should fail for a named node and a variable 1`] = `"expected a and ?a to be equal"`;
 
 exports[`#toEqualRdfTerm should fail for non-equal named nodes 1`] = `"expected a and b to be equal"`;
 
+exports[`#toEqualRdfTerm should fail for non-equal quads 1`] = `"expected <<s p o g>> and <<s1 p o g>> to be equal"`;
+
 exports[`#toEqualRdfTerm should not fail for equal blank nodes 1`] = `"expected _:a and _:a not to be equal"`;
 
 exports[`#toEqualRdfTerm should not fail for equal named nodes 1`] = `"expected a and a not to be equal"`;
+
+exports[`#toEqualRdfTerm should not fail for equal quads 1`] = `"expected <<s p o g>> and <<s p o g>> not to be equal"`;
 
 exports[`#toEqualRdfTerm should not fail for non-equal blank nodes 1`] = `"expected _:a and _:b not to be equal"`;

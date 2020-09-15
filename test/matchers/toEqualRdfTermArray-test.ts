@@ -18,6 +18,40 @@ describe('#toEqualRdfTermArray', () => {
     ]);
   });
 
+  it('should succeed for equal term arrays with nested quads', () => {
+    return expect([
+      DF.namedNode('s1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g1'),
+    ]).toEqualRdfTermArray([
+      DF.namedNode('s1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g1'),
+    ]);
+  });
+
   it('should not fail for equal quad arrays', () => {
     return expect(() => expect([
       DF.namedNode('s1'),
@@ -79,6 +113,74 @@ describe('#toEqualRdfTermArray', () => {
       DF.namedNode('p2'),
       DF.namedNode('o2'),
       DF.namedNode('g2'),
+    ])).toThrowErrorMatchingSnapshot();
+  });
+
+  it('should not succeed for quad arrays with nested quads with equal length but different contents', () => {
+    return expect([
+      DF.namedNode('s1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g1'),
+    ]).not.toEqualRdfTermArray([
+      DF.namedNode('s1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.quad(
+        DF.namedNode('s2-'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g1'),
+    ]);
+  });
+
+  it('should fail for quad arrays with nested quads with equal length but different contents', () => {
+    return expect(() => expect([
+      DF.namedNode('s1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.namedNode('g1'),
+    ]).toEqualRdfTermArray([
+      DF.namedNode('s1'),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g'),
+      ),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p'),
+        DF.namedNode('o'),
+        DF.namedNode('g-'),
+      ),
+      DF.namedNode('g1'),
     ])).toThrowErrorMatchingSnapshot();
   });
 });

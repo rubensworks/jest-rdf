@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`#toEqualRdfQuad should fail for non-equal quads 1`] = `"expected s and s1 to be equal"`;
+
 exports[`#toEqualRdfQuad should not fail for equal quads 1`] = `
+"expected
+  {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}
+not to equal
+  {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}"
+`;
+
+exports[`#toEqualRdfQuad should not fail for equal quads 2`] = `
 "expected
   {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}
 not to equal

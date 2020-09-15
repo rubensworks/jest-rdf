@@ -89,6 +89,58 @@ describe('#toEqualRdfQuadArray', () => {
     ]);
   });
 
+  it('should succeed for equal quad arrays with nested quads', () => {
+    return expect([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s1'),
+          DF.namedNode('p'),
+          DF.namedNode('o'),
+          DF.namedNode('g'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]).toEqualRdfQuadArray([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s1'),
+          DF.namedNode('p'),
+          DF.namedNode('o'),
+          DF.namedNode('g'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]);
+  });
+
   it('should not fail for equal quad arrays', () => {
     return expect(() => expect([
       DF.quad(
@@ -229,6 +281,58 @@ describe('#toEqualRdfQuadArray', () => {
         DF.namedNode('p1'),
         DF.namedNode('o1'),
         DF.namedNode('g1'),
+      ),
+    ]);
+  });
+
+  it('should not succeed for quad arrays with nested quads with equal length but different contents', () => {
+    return expect([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s1'),
+          DF.namedNode('p'),
+          DF.namedNode('o'),
+          DF.namedNode('g'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]).not.toEqualRdfQuadArray([
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.quad(
+          DF.namedNode('s1-'),
+          DF.namedNode('p'),
+          DF.namedNode('o'),
+          DF.namedNode('g'),
+        ),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
       ),
     ]);
   });

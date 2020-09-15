@@ -4,4 +4,6 @@ exports[`#toEqualRdfTermArray should fail for quad arrays with different length 
 
 exports[`#toEqualRdfTermArray should fail for quad arrays with equal length but different contents 1`] = `"expected s1 and s2 to be equal"`;
 
+exports[`#toEqualRdfTermArray should fail for quad arrays with nested quads with equal length but different contents 1`] = `"expected <<s2 p o g>> and <<s2 p o g->> to be equal"`;
+
 exports[`#toEqualRdfTermArray should not fail for equal quad arrays 1`] = `"expected [ \\"s1\\", \\"p1\\", \\"o1\\", \\"g1\\" ] not to equal [ \\"s1\\", \\"p1\\", \\"o1\\", \\"g1\\" ]"`;
