@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.6.0"></a>
+## [v1.6.0](https://github.com/rubensworks/jest-rdf/compare/v1.5.0...v1.6.0) - 2020-09-15
+
+### Added
+* [Update matchers to support nested quads](https://github.com/rubensworks/jest-rdf/commit/899e8e2493172e7393b84d126bedfceeef61795d)
+
+### Changed
+* [Update to RDF/JS typings 4.x.x](https://github.com/rubensworks/jest-rdf/commit/c02c151ec8c364540b7f78cbc48ded7cdb11a191)
+
 <a name="v1.5.0"></a>
 ## [v1.5.0](https://github.com/rubensworks/jest-rdf/compare/v1.4.0...v1.5.0) - 2020-01-24
 
