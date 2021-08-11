@@ -1,4 +1,4 @@
-import * as RDF from "rdf-js";
+import * as RDF from "@rdfjs/types";
 import {termToString} from "rdf-string";
 
 function fail(received: RDF.Term, actual: RDF.Term) {

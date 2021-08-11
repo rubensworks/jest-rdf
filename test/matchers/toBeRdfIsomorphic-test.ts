@@ -1,6 +1,6 @@
 import { DataFactory } from 'rdf-data-factory';
 import datasetFactory = require('rdf-dataset-indexed');
-import * as RDF from "rdf-js";
+import * as RDF from "@rdfjs/types";
 import "../../index";
 
 const DF = new DataFactory();

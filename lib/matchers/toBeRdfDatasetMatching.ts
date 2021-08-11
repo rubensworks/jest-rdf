@@ -1,4 +1,4 @@
-import * as RDF from 'rdf-js';
+import * as RDF from '@rdfjs/types';
 
 export interface IQuadTerms<Q extends RDF.BaseQuad = RDF.Quad> {
   subject?: Q['subject'];

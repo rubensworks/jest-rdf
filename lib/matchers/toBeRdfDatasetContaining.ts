@@ -1,4 +1,4 @@
-import * as RDF from 'rdf-js';
+import * as RDF from '@rdfjs/types';
 import { quadToStringQuad } from 'rdf-string';
 
 function quadArrayToString<Q extends RDF.BaseQuad = RDF.Quad>(quadArray: Q[]): string {

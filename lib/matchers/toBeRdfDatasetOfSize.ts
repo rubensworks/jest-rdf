@@ -1,4 +1,4 @@
-import * as RDF from 'rdf-js';
+import * as RDF from '@rdfjs/types';
 
 export default {
   toBeRdfDatasetOfSize<Q extends RDF.BaseQuad = RDF.Quad>(dataset: RDF.DatasetCore<Q>, expected: number) {
