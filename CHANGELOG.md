@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.7.0"></a>
+## [v1.7.0](https://github.com/rubensworks/jest-rdf/compare/v1.6.0...v1.7.0) - 2021-08-11
+
+### Changed
+* [Migrate to @rdfjs/types](https://github.com/rubensworks/jest-rdf/commit/7b4dca33483a11df580097ca95cf47749c5fa054)
+
 <a name="v1.6.0"></a>
 ## [v1.6.0](https://github.com/rubensworks/jest-rdf/compare/v1.5.0...v1.6.0) - 2020-09-15
 
