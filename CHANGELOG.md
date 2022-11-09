@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.7.1"></a>
+## [v1.7.1](https://github.com/rubensworks/jest-rdf/compare/v1.7.0...v1.7.1) - 2022-11-09
+
+### Fixed
+* [Include source map files in packed files](https://github.com/rubensworks/jest-rdf/commit/572163fa310f00da6903d626b494e0c3e2909dbf)
+
 <a name="v1.7.0"></a>
 ## [v1.7.0](https://github.com/rubensworks/jest-rdf/compare/v1.6.0...v1.7.0) - 2021-08-11
 
