@@ -14,6 +14,19 @@ exports[`#toBeRdfIsomorphic should fail for quad arrays with different length 1`
   {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
   {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
 ]
+
+Missing:
+[
+
+]
+
+Additional:
+[
+  {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
+  {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
+]
+
+**Note** The missing and additional arrays may contain extra quads as they do not account for isomorphisms in blank nodes
 "
 `;
 
@@ -33,6 +46,19 @@ exports[`#toBeRdfIsomorphic should fail for quad arrays with equal length but di
   {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
   {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
 ]
+
+Missing:
+[
+
+]
+
+Additional:
+[
+  {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
+  {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
+]
+
+**Note** The missing and additional arrays may contain extra quads as they do not account for isomorphisms in blank nodes
 "
 `;
 

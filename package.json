@@ -43,6 +43,7 @@
     "pre-commit": "^1.2.2",
     "rdf-data-factory": "^1.1.0",
     "rdf-dataset-indexed": "^0.4.0",
+    "rdf-terms": "^1.9.1",
     "ts-jest": "^26.0.0",
     "tslint": "^6.0.0",
     "tslint-eslint-rules": "^5.3.1",

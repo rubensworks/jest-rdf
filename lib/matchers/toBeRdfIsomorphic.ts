@@ -20,6 +20,14 @@ ${quadArrayToString(actualArray)}
 
   Actual:
 ${quadArrayToString(receivedArray)}
+
+Missing:
+${quadArrayToString(actualArray.filter(quad => receivedArray.every(q2 => !q2.equals(quad))))}
+
+Additional:
+${quadArrayToString(receivedArray.filter(quad => actualArray.every(q2 => !q2.equals(quad))))}
+
+**Note** The missing and additional arrays may contain extra quads as they do not account for isomorphisms in blank nodes
 `,
         pass: false,
       };
