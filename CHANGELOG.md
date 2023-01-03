@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.8.0"></a>
+## [v1.8.0](https://github.com/rubensworks/jest-rdf/compare/v1.7.1...v1.8.0) - 2023-01-03
+
+### Added
+* [Show diff on non-isomorphic sets](https://github.com/rubensworks/jest-rdf/commit/99623bf7e3357a2f641c4f82e2bff5a839e7c752)
+* [Update dependency @types/node to v18](https://github.com/rubensworks/jest-rdf/commit/842f8394486d869b04b2b6f1ee8d8a2ab16d4817)
+
 <a name="v1.7.1"></a>
 ## [v1.7.1](https://github.com/rubensworks/jest-rdf/compare/v1.7.0...v1.7.1) - 2022-11-09
 
