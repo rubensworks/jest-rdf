@@ -15,18 +15,22 @@ exports[`#toBeRdfIsomorphic should fail for quad arrays with different length 1`
   {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
 ]
 
-Missing:
+Missing Quads (that don't contain Blank Nodes):
 [
 
 ]
 
-Additional:
+Additional Quads (that don't contain Blank Nodes):
 [
   {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
   {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
 ]
 
-**Note** The missing and additional arrays may contain extra quads as they do not account for isomorphisms in blank nodes
+Missing Blank Node Patterns:
+
+
+Additional Blank Node Patterns:
+
 "
 `;
 
@@ -47,18 +51,22 @@ exports[`#toBeRdfIsomorphic should fail for quad arrays with equal length but di
   {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
 ]
 
-Missing:
+Missing Quads (that don't contain Blank Nodes):
 [
 
 ]
 
-Additional:
+Additional Quads (that don't contain Blank Nodes):
 [
   {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
   {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
 ]
 
-**Note** The missing and additional arrays may contain extra quads as they do not account for isomorphisms in blank nodes
+Missing Blank Node Patterns:
+
+
+Additional Blank Node Patterns:
+
 "
 `;
 
@@ -77,6 +85,86 @@ exports[`#toBeRdfIsomorphic should not fail for equal quad arrays 1`] = `
   {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
   {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
   {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
+]
+"
+`;
+
+exports[`#toBeRdfIsomorphic should not succeed for quad arrays with equal length but different contents (bnodes isomorphic) 1`] = `
+"expected two graphs to be isomorphic.
+
+  Expected:
+[
+  {\\"subject\\":\\"_:s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"}
+]
+
+  Actual:
+[
+  {\\"subject\\":\\"_:s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
+  {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
+]
+
+Missing Quads (that don't contain Blank Nodes):
+[
+
+]
+
+Additional Quads (that don't contain Blank Nodes):
+[
+  {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
+  {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
+]
+
+Missing Blank Node Patterns:
+
+
+Additional Blank Node Patterns:
+
+"
+`;
+
+exports[`#toBeRdfIsomorphic should not succeed for quad arrays with equal length but different contents (bnodes non-isomorphic) 1`] = `
+"expected two graphs to be isomorphic.
+
+  Expected:
+[
+  {\\"subject\\":\\"_:s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"}
+]
+
+  Actual:
+[
+  {\\"subject\\":\\"_:s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"},
+  {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
+  {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
+]
+
+Missing Quads (that don't contain Blank Nodes):
+[
+
+]
+
+Additional Quads (that don't contain Blank Nodes):
+[
+  {\\"subject\\":\\"s2\\",\\"predicate\\":\\"p2\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g2\\"},
+  {\\"subject\\":\\"s3\\",\\"predicate\\":\\"p3\\",\\"object\\":\\"o3\\",\\"graph\\":\\"g3\\"}
+]
+
+Missing Blank Node Patterns:
+_:s1 : [
+  {\\"subject\\":\\"_:s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o2\\",\\"graph\\":\\"g1\\"}
+]
+
+Additional Blank Node Patterns:
+_:s1 : [
+  {\\"subject\\":\\"_:s1\\",\\"predicate\\":\\"p1\\",\\"object\\":\\"o1\\",\\"graph\\":\\"g1\\"}
 ]
 "
 `;

@@ -422,6 +422,114 @@ describe('#toBeRdfIsomorphic', () => {
     ]);
   });
 
+  it('should not succeed for quad arrays with equal length but different contents (bnodes isomorphic)', () => {
+    return expect(() => expect([
+      DF.quad(
+        DF.blankNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]).toBeRdfIsomorphic([
+      DF.quad(
+        DF.blankNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+    ])).toThrowErrorMatchingSnapshot();
+  });
+
+  it('should not succeed for quad arrays with equal length but different contents (bnodes non-isomorphic)', () => {
+    return expect(() => expect([
+      DF.quad(
+        DF.blankNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s2'),
+        DF.namedNode('p2'),
+        DF.namedNode('o2'),
+        DF.namedNode('g2'),
+      ),
+      DF.quad(
+        DF.namedNode('s3'),
+        DF.namedNode('p3'),
+        DF.namedNode('o3'),
+        DF.namedNode('g3'),
+      ),
+    ]).toBeRdfIsomorphic([
+      DF.quad(
+        DF.blankNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o2'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+      DF.quad(
+        DF.namedNode('s1'),
+        DF.namedNode('p1'),
+        DF.namedNode('o1'),
+        DF.namedNode('g1'),
+      ),
+    ])).toThrowErrorMatchingSnapshot();
+  });
+
   it('should not succeed for quad arrays with nested quads with equal length but different contents', () => {
     return expect([
       DF.quad(
