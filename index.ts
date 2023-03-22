@@ -29,3 +29,4 @@ export const enforceJestGlobal = () => {
     throw new Error("Jest was not installed.");
   }
 };
+export { matchers };
