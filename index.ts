@@ -22,6 +22,10 @@ const jestExpect = (<any> global).expect;
 
 if (jestExpect) {
   jestExpect.extend(matchers);
-} else {
-  throw new Error('Jest was not installed.');
 }
+
+export const enforceJestGlobal = () => {
+  if (!jestExpect) {
+    throw new Error("Jest was not installed.");
+  }
+};
