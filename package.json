@@ -38,7 +38,7 @@
     "@types/node": "^18.0.0",
     "@types/rdf-dataset-indexed": "^0.4.3",
     "coveralls": "^3.0.0",
-    "jest": "^26.0.0",
+    "jest": "^29.0.0",
     "manual-git-changelog": "^1.0.0",
     "pre-commit": "^1.2.2",
     "rdf-data-factory": "^1.1.0",
