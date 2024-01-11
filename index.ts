@@ -1,4 +1,4 @@
-import * as RDF from "rdf-js";
+import * as RDF from "@rdfjs/types";
 import matchers from './lib/matchers';
 import { IQuadTerms } from './lib/matchers/toBeRdfDatasetMatching';
 
