@@ -1,6 +1,6 @@
 {
   "name": "jest-rdf",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Jest utilities for RDF(JS)",
   "keywords": [
     "jest",

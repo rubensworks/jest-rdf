@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v1.8.1"></a>
+## [v1.8.1](https://github.com/rubensworks/jest-rdf/compare/v1.8.0...v1.8.1) - 2024-01-11
+
+### Fixed
+* [Use @rdfjs/types instead of rdf-js for RDF types](https://github.com/rubensworks/jest-rdf/commit/bbc1018ab224b43284c4458c6dda33f5b1a982e1)
+
 <a name="v1.8.0"></a>
 ## [v1.8.0](https://github.com/rubensworks/jest-rdf/compare/v1.7.1...v1.8.0) - 2023-01-03
 
