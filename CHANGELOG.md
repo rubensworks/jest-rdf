@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+<a name="v2.0.0"></a>
+## [v2.0.0](https://github.com/rubensworks/jest-rdf/compare/v1.8.1...v2.0.0) - 2025-01-08
+
+### BREAKING CHANGES
+* [Update to rdf-data-factory v2](https://github.com/rubensworks/jest-rdf/commit/818552ca76a7071a05a7e548547551d005525f1f)
+    This includes a bump to @rdfjs/types@2.0.0, which requires TypeScript 5 and Node 14+
+
 <a name="v1.8.1"></a>
 ## [v1.8.1](https://github.com/rubensworks/jest-rdf/compare/v1.8.0...v1.8.1) - 2024-01-11
 
