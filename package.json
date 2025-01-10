@@ -45,7 +45,7 @@
     "jest": "^26.0.0",
     "manual-git-changelog": "^1.0.0",
     "pre-commit": "^1.2.2",
-    "rdf-data-factory": "^1.1.0",
+    "rdf-data-factory": "^2.0.0",
     "rdf-dataset-indexed": "^0.4.0",
     "ts-jest": "^26.0.0",
     "tslint": "^6.0.0",
