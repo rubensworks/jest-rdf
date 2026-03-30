@@ -1,11 +1,11 @@
 import { DataFactory } from 'rdf-data-factory';
-import "../../index";
+import '../../index';
 
 const DF = new DataFactory();
 
 describe('#toEqualRdfTermArray', () => {
   it('should succeed for equal term arrays', () => {
-    return expect([
+    expect([
       DF.namedNode('s1'),
       DF.namedNode('p1'),
       DF.namedNode('o1'),
@@ -19,7 +19,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should succeed for equal term arrays with nested quads', () => {
-    return expect([
+    expect([
       DF.namedNode('s1'),
       DF.quad(
         DF.namedNode('s1'),
@@ -53,7 +53,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should not fail for equal quad arrays', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.namedNode('s1'),
       DF.namedNode('p1'),
       DF.namedNode('o1'),
@@ -67,7 +67,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should not succeed for quad arrays with different length', () => {
-    return expect([
+    expect([
       DF.namedNode('s1'),
       DF.namedNode('p1'),
       DF.namedNode('o1'),
@@ -78,7 +78,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should fail for quad arrays with different length', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.namedNode('s1'),
       DF.namedNode('p1'),
       DF.namedNode('o1'),
@@ -89,7 +89,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should not succeed for quad arrays with equal length but different contents', () => {
-    return expect([
+    expect([
       DF.namedNode('s1'),
       DF.namedNode('p1'),
       DF.namedNode('o1'),
@@ -103,7 +103,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should fail for quad arrays with equal length but different contents', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.namedNode('s1'),
       DF.namedNode('p1'),
       DF.namedNode('o1'),
@@ -117,7 +117,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should not succeed for quad arrays with nested quads with equal length but different contents', () => {
-    return expect([
+    expect([
       DF.namedNode('s1'),
       DF.quad(
         DF.namedNode('s1'),
@@ -151,7 +151,7 @@ describe('#toEqualRdfTermArray', () => {
   });
 
   it('should fail for quad arrays with nested quads with equal length but different contents', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.namedNode('s1'),
       DF.quad(
         DF.namedNode('s1'),

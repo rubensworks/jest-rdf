@@ -1,7 +1,7 @@
-import * as RDF from '@rdfjs/types';
+import type * as RDF from '@rdfjs/types';
 
 export default {
-  toBeRdfDatasetOfSize<Q extends RDF.BaseQuad = RDF.Quad>(dataset: RDF.DatasetCore<Q>, expected: number) {
+  toBeRdfDatasetOfSize<TQuad extends RDF.BaseQuad = RDF.Quad>(dataset: RDF.DatasetCore<TQuad>, expected: number) {
     const actual = dataset.size;
 
     if (expected !== actual) {

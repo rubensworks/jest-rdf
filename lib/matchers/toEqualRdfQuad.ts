@@ -1,9 +1,9 @@
-import * as RDF from "@rdfjs/types";
-import {quadToStringQuad} from "rdf-string";
-import M from "./toEqualRdfTerm";
+import type * as RDF from '@rdfjs/types';
+import { quadToStringQuad } from 'rdf-string';
+import M from './toEqualRdfTerm';
 
 export default {
-  toEqualRdfQuad<Q extends RDF.BaseQuad = RDF.Quad>(received: Q, actual: Q) {
+  toEqualRdfQuad<TQuad extends RDF.BaseQuad = RDF.Quad>(received: TQuad, actual: TQuad) {
     const s = M.toEqualRdfTerm(received.subject, actual.subject);
     if (!s.pass) {
       return s;

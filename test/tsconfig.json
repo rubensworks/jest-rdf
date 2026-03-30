@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "types": ["node", "jest"],
     "lib": [
       "es6"
-    ]
+    ],
+    "module": "commonjs",
+    "types": ["node", "jest"]
   }
 }

@@ -27,22 +27,22 @@ const quad3 = DF.quad(
 
 describe('#toBeRdfDatasetMatching', () => {
   it('should succeed if the dataset matches', () => {
-    return expect(datasetFactory([quad1, quad2, quad3])).toBeRdfDatasetMatching({ subject: DF.namedNode('s') }, 3);
+    expect(datasetFactory([ quad1, quad2, quad3 ])).toBeRdfDatasetMatching({ subject: DF.namedNode('s') }, 3);
   });
 
   it('should not succeed if the dataset does not match', () => {
-    return expect(datasetFactory([quad1, quad2, quad3])).not.toBeRdfDatasetMatching({ subject: DF.namedNode('s') });
+    expect(datasetFactory([ quad1, quad2, quad3 ])).not.toBeRdfDatasetMatching({ subject: DF.namedNode('s') });
   });
 
   it('should fail if the dataset does not match', () => {
-    return expect(() => expect([
-      expect(datasetFactory([quad1, quad2, quad3])).toBeRdfDatasetMatching({ subject: DF.namedNode('s') }),
-    ])).toThrowErrorMatchingSnapshot();
+    expect(() => {
+      expect(datasetFactory([ quad1, quad2, quad3 ])).toBeRdfDatasetMatching({ subject: DF.namedNode('s') });
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('should not fail if the dataset matches', () => {
-    return expect(() => expect([
-      expect(datasetFactory([quad1, quad2, quad3])).not.toBeRdfDatasetMatching({ subject: DF.namedNode('s') }, 3),
-    ])).toThrowErrorMatchingSnapshot();
+    expect(() => {
+      expect(datasetFactory([ quad1, quad2, quad3 ])).not.toBeRdfDatasetMatching({ subject: DF.namedNode('s') }, 3);
+    }).toThrowErrorMatchingSnapshot();
   });
 });

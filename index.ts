@@ -1,10 +1,11 @@
-import * as RDF from "@rdfjs/types";
+import type * as RDF from '@rdfjs/types';
 import matchers from './lib/matchers';
-import { IQuadTerms } from './lib/matchers/toBeRdfDatasetMatching';
+import type { IQuadTerms } from './lib/matchers/toBeRdfDatasetMatching';
 
 declare global {
+  // eslint-disable-next-line ts/no-namespace
   namespace jest {
-    // tslint:disable-next-line:interface-name
+    // eslint-disable-next-line ts/naming-convention
     interface Matchers<R> {
       toBeRdfDatasetContaining: (...actual: RDF.BaseQuad[]) => R;
       toBeRdfDatasetMatching: (match: IQuadTerms<RDF.BaseQuad>, matches?: number) => R;
@@ -18,7 +19,8 @@ declare global {
   }
 }
 
-const jestExpect = (<any> global).expect;
+// eslint-disable-next-line ts/no-unsafe-assignment
+const jestExpect = (<any> globalThis).expect;
 
 if (jestExpect) {
   jestExpect.extend(matchers);

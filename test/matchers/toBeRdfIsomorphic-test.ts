@@ -1,13 +1,13 @@
+import type * as RDF from '@rdfjs/types';
 import { DataFactory } from 'rdf-data-factory';
 import datasetFactory = require('rdf-dataset-indexed');
-import * as RDF from "@rdfjs/types";
-import "../../index";
+import '../../index';
 
 const DF = new DataFactory();
 
 describe('#toBeRdfIsomorphic', () => {
   it('should succeed for equal quad arrays', () => {
-    return expect([
+    expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -49,7 +49,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should succeed for equal quad arrays with nested quads', () => {
-    return expect([
+    expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -101,7 +101,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should succeed for equal quad arrays with nested quads with blank nodes', () => {
-    return expect([
+    expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -153,7 +153,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should succeed for equal generalized quad arrays', () => {
-    return expect([
+    expect([
       new DataFactory<RDF.BaseQuad>().quad(
         DF.blankNode('s1'),
         DF.blankNode('p1'),
@@ -195,7 +195,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should succeed for isomorphic quad arrays', () => {
-    return expect([
+    expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -237,7 +237,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should work with iterables', () => {
-    return expect(datasetFactory([
+    expect(datasetFactory([
       DF.quad(
         DF.blankNode('s1a'),
         DF.namedNode('p1'),
@@ -279,7 +279,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should not fail for equal quad arrays', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -321,7 +321,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should not succeed for quad arrays with different length', () => {
-    return expect([
+    expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -351,7 +351,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should fail for quad arrays with different length', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -381,7 +381,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should not succeed for quad arrays with equal length but different contents', () => {
-    return expect([
+    expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),
@@ -423,7 +423,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should not succeed for quad arrays with equal length but different contents (bnodes isomorphic)', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.quad(
         DF.blankNode('s1'),
         DF.namedNode('p1'),
@@ -477,7 +477,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should not succeed for quad arrays with equal length but different contents (bnodes non-isomorphic)', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.quad(
         DF.blankNode('s1'),
         DF.namedNode('p1'),
@@ -531,7 +531,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should not succeed for quad arrays with nested quads with equal length but different contents', () => {
-    return expect([
+    expect([
       DF.quad(
         DF.namedNode('s1A'),
         DF.namedNode('p1'),
@@ -583,7 +583,7 @@ describe('#toBeRdfIsomorphic', () => {
   });
 
   it('should fail for quad arrays with equal length but different contents', () => {
-    return expect(() => expect([
+    expect(() => expect([
       DF.quad(
         DF.namedNode('s1'),
         DF.namedNode('p1'),

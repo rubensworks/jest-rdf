@@ -1,9 +1,9 @@
-import * as RDF from "@rdfjs/types";
-import {termToString} from "rdf-string";
-import M from "./toEqualRdfTerm";
+import type * as RDF from '@rdfjs/types';
+import { termToString } from 'rdf-string';
+import M from './toEqualRdfTerm';
 
 function termArrayToString(termArray: RDF.Term[]): string {
-  return '[ ' + termArray.map((term) => JSON.stringify(termToString(term))).join(', ') + ' ]';
+  return `[ ${termArray.map(term => JSON.stringify(termToString(term))).join(', ')} ]`;
 }
 
 export default {
@@ -15,8 +15,8 @@ export default {
       };
     }
 
-    for (let i = 0; i < received.length; i++) {
-      const q = M.toEqualRdfTerm(received[i], actual[i]);
+    for (const [ i, element ] of received.entries()) {
+      const q = M.toEqualRdfTerm(element, actual[i]);
       if (!q.pass) {
         return q;
       }
