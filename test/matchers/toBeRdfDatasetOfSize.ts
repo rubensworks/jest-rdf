@@ -20,22 +20,22 @@ const quad2 = DF.quad(
 
 describe('#toBeRdfDatasetOfSize', () => {
   it('should succeed if the dataset has the right number of quad', () => {
-    return expect(datasetFactory([quad1, quad2])).toBeRdfDatasetOfSize(2);
+    expect(datasetFactory([ quad1, quad2 ])).toBeRdfDatasetOfSize(2);
   });
 
   it('should not succeed if the dataset does not have the right number of quads', () => {
-    return expect(datasetFactory([quad1])).not.toBeRdfDatasetOfSize(2);
+    expect(datasetFactory([ quad1 ])).not.toBeRdfDatasetOfSize(2);
   });
 
   it('should fail if the dataset does not have the right number of quads', () => {
-    return expect(() => expect([
-      expect(datasetFactory([quad1])).toBeRdfDatasetOfSize(2),
-    ])).toThrowErrorMatchingSnapshot();
+    expect(() => {
+      expect(datasetFactory([ quad1 ])).toBeRdfDatasetOfSize(2);
+    }).toThrowErrorMatchingSnapshot();
   });
 
   it('should not fail if the dataset has the right number of quads', () => {
-    return expect(() => expect([
-      expect(datasetFactory([quad1, quad2])).not.toBeRdfDatasetOfSize(2),
-    ])).toThrowErrorMatchingSnapshot();
+    expect(() => {
+      expect(datasetFactory([ quad1, quad2 ])).not.toBeRdfDatasetOfSize(2);
+    }).toThrowErrorMatchingSnapshot();
   });
 });

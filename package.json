@@ -1,7 +1,20 @@
 {
   "name": "jest-rdf",
   "version": "2.0.0",
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "description": "Jest utilities for RDF(JS)",
+  "typings": "index",
+  "author": "Ruben Taelman <rubensworks@gmail.com>",
+  "license": "MIT",
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/rubensworks/"
+  },
+  "homepage": "https://github.com/rubensworks/jest-rdf#readme",
+  "repository": "git@github.com:rubensworks/jest-rdf.git",
+  "bugs": {
+    "url": "https://github.com/rubensworks/jest-rdf/issues"
+  },
   "keywords": [
     "jest",
     "rdf",
@@ -12,46 +25,19 @@
     "extend"
   ],
   "main": "index.js",
-  "typings": "index",
-  "repository": "git@github.com:rubensworks/jest-rdf.git",
-  "author": "Ruben Taelman <rubensworks@gmail.com>",
-  "funding": {
-    "type": "individual",
-    "url": "https://github.com/sponsors/rubensworks/"
-  },
-  "bugs": {
-    "url": "https://github.com/rubensworks/jest-rdf/issues"
-  },
-  "homepage": "https://github.com/rubensworks/jest-rdf#readme",
-  "license": "MIT",
   "files": [
+    "index.d.ts",
+    "index.js",
+    "index.js.map",
     "lib/**/*.d.ts",
     "lib/**/*.js",
-    "lib/**/*.js.map",
-    "index.d.ts",
-    "index.js.map",
-    "index.js"
+    "lib/**/*.js.map"
   ],
   "pre-commit": [
     "build",
     "lint",
     "test"
   ],
-  "devDependencies": {
-    "@types/jest": "^27.0.0",
-    "@types/node": "^24.0.0",
-    "@types/rdf-dataset-indexed": "^0.4.3",
-    "coveralls": "^3.0.0",
-    "jest": "^26.0.0",
-    "manual-git-changelog": "^1.0.0",
-    "pre-commit": "^1.2.2",
-    "rdf-data-factory": "^2.0.0",
-    "rdf-dataset-indexed": "^0.4.0",
-    "ts-jest": "^26.0.0",
-    "tslint": "^6.0.0",
-    "tslint-eslint-rules": "^5.3.1",
-    "typescript": "^6.0.0"
-  },
   "jest": {
     "setupFilesAfterEnv": [
       "./index.js"
@@ -73,7 +59,7 @@
     "test": "jest ${1}",
     "test-watch": "jest ${1} --watch",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "lint": "tslint index.ts lib/**/*.ts test/**/*.ts --exclude '**/*.d.ts'",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint . --cache",
     "build": "tsc",
     "validate": "npm ls",
     "prepare": "npm run build",
@@ -84,5 +70,19 @@
     "rdf-string": "^2.0.0",
     "rdf-terms": "^2.0.0"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "devDependencies": {
+    "@rubensworks/eslint-config": "^3.1.0",
+    "@types/jest": "^27.0.0",
+    "@types/node": "^24.0.0",
+    "@types/rdf-dataset-indexed": "^0.4.3",
+    "coveralls": "^3.0.0",
+    "eslint": "^8.21.0",
+    "jest": "^26.0.0",
+    "manual-git-changelog": "^1.0.0",
+    "pre-commit": "^1.2.2",
+    "rdf-data-factory": "^2.0.0",
+    "rdf-dataset-indexed": "^0.4.0",
+    "ts-jest": "^26.0.0",
+    "typescript": "^6.0.0"
+  }
 }

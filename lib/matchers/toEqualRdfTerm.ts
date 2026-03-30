@@ -1,14 +1,14 @@
-import * as RDF from "@rdfjs/types";
-import {termToString} from "rdf-string";
+import type * as RDF from '@rdfjs/types';
+import { termToString } from 'rdf-string';
 
-function fail(received: RDF.Term, actual: RDF.Term) {
+function fail(received: RDF.Term, actual: RDF.Term): { message: () => string; pass: false } {
   return {
     message: () => `expected ${termToString(received)} and ${termToString(actual)} to be equal`,
     pass: false,
   };
 }
 
-function succeed(received: RDF.Term, actual: RDF.Term) {
+function succeed(received: RDF.Term, actual: RDF.Term): { message: () => string; pass: true } {
   return {
     message: () => `expected ${termToString(received)} and ${termToString(actual)} not to be equal`,
     pass: true,

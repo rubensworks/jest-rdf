@@ -1,13 +1,13 @@
-import * as RDF from "@rdfjs/types";
-import {quadToStringQuad} from "rdf-string";
-import M from "./toEqualRdfQuad";
+import type * as RDF from '@rdfjs/types';
+import { quadToStringQuad } from 'rdf-string';
+import M from './toEqualRdfQuad';
 
-function quadArrayToString<Q extends RDF.BaseQuad = RDF.Quad>(quadArray: Q[]): string {
-  return '[ ' + quadArray.map((quad) => JSON.stringify(quadToStringQuad(quad))).join(', ') + ' ]';
+function quadArrayToString<TQuad extends RDF.BaseQuad = RDF.Quad>(quadArray: TQuad[]): string {
+  return `[ ${quadArray.map(quad => JSON.stringify(quadToStringQuad(quad))).join(', ')} ]`;
 }
 
 export default {
-  toEqualRdfQuadArray<Q extends RDF.BaseQuad = RDF.Quad>(received: Q[], actual: Q[]) {
+  toEqualRdfQuadArray<TQuad extends RDF.BaseQuad = RDF.Quad>(received: TQuad[], actual: TQuad[]) {
     if (received.length !== actual.length) {
       return {
         message: () => `expected ${quadArrayToString(received)} to equal ${quadArrayToString(actual)}`,
@@ -15,8 +15,8 @@ export default {
       };
     }
 
-    for (let i = 0; i < received.length; i++) {
-      const q = M.toEqualRdfQuad(received[i], actual[i]);
+    for (const [ i, element ] of received.entries()) {
+      const q = M.toEqualRdfQuad(element, actual[i]);
       if (!q.pass) {
         return q;
       }

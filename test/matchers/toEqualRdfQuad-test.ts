@@ -1,12 +1,12 @@
+import type * as RDF from '@rdfjs/types';
 import { DataFactory } from 'rdf-data-factory';
-import * as RDF from "@rdfjs/types";
-import "../../index";
+import '../../index';
 
 const DF = new DataFactory();
 
 describe('#toEqualRdfQuad', () => {
   it('should succeed for equal quads', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o'),
@@ -20,7 +20,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should succeed for equal generalized quads', () => {
-    return expect(new DataFactory<RDF.BaseQuad>().quad(
+    expect(new DataFactory<RDF.BaseQuad>().quad(
       DF.blankNode('s'),
       DF.blankNode('p'),
       DF.blankNode('o'),
@@ -34,7 +34,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should not fail for equal quads', () => {
-    return expect(() => expect(DF.quad(
+    expect(() => expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o'),
@@ -48,7 +48,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should not succeed for quads with different subjects', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s1'),
       DF.namedNode('p'),
       DF.namedNode('o'),
@@ -62,7 +62,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should not succeed for quads with different predicates', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p1'),
       DF.namedNode('o'),
@@ -76,7 +76,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should not succeed for quads with different objects', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o1'),
@@ -90,7 +90,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should not succeed for quads with different graphs', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o'),
@@ -104,7 +104,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should succeed for equal quads nodes', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o'),
@@ -118,7 +118,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should succeed for equal nested quads nodes', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.quad(
@@ -142,7 +142,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should not succeed for non-equal quads', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o'),
@@ -156,7 +156,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should not succeed for non-equal nested quads', () => {
-    return expect(DF.quad(
+    expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.quad(
@@ -179,8 +179,8 @@ describe('#toEqualRdfQuad', () => {
     ));
   });
 
-  it('should not fail for equal quads', () => {
-    return expect(() => expect(DF.quad(
+  it('should not fail for equal quad nodes', () => {
+    expect(() => expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o'),
@@ -194,7 +194,7 @@ describe('#toEqualRdfQuad', () => {
   });
 
   it('should fail for non-equal quads', () => {
-    return expect(() => expect(DF.quad(
+    expect(() => expect(DF.quad(
       DF.namedNode('s'),
       DF.namedNode('p'),
       DF.namedNode('o'),
