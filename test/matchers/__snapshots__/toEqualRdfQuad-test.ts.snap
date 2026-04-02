@@ -1,17 +1,17 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`#toEqualRdfQuad should fail for non-equal quads 1`] = `"expected s and s1 to be equal"`;
 
 exports[`#toEqualRdfQuad should not fail for equal quad nodes 1`] = `
 "expected
-  {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}
+  {"subject":"s","predicate":"p","object":"o","graph":"g"}
 not to equal
-  {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}"
+  {"subject":"s","predicate":"p","object":"o","graph":"g"}"
 `;
 
 exports[`#toEqualRdfQuad should not fail for equal quads 1`] = `
 "expected
-  {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}
+  {"subject":"s","predicate":"p","object":"o","graph":"g"}
 not to equal
-  {\\"subject\\":\\"s\\",\\"predicate\\":\\"p\\",\\"object\\":\\"o\\",\\"graph\\":\\"g\\"}"
+  {"subject":"s","predicate":"p","object":"o","graph":"g"}"
 `;

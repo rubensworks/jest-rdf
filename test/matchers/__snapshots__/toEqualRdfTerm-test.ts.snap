@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`#toEqualRdfTerm should fail for a blank node and a quads 1`] = `"expected _:a and <<s p o g>> to be equal"`;
 

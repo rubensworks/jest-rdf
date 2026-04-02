@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`#toBeRdfDatasetOfSize should fail if the dataset does not have the right number of quads 1`] = `"expected dataset to have 2 quads, 1 received"`;
 
