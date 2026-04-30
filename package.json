@@ -79,7 +79,7 @@
     "eslint": "^8.21.0",
     "jest": "^30.0.0",
     "manual-git-changelog": "^1.0.0",
-    "pre-commit": "^1.2.2",
+    "pre-commit": "^2.0.0",
     "rdf-data-factory": "^2.0.0",
     "rdf-dataset-indexed": "^0.4.0",
     "ts-jest": "^29.0.0",
