@@ -83,6 +83,6 @@
     "rdf-data-factory": "^2.0.0",
     "rdf-dataset-indexed": "^0.4.0",
     "ts-jest": "^29.0.0",
-    "typescript": "^6.0.0"
+    "typescript": "^7.0.0"
   }
 }
