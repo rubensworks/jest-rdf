@@ -73,7 +73,7 @@
   "devDependencies": {
     "@rubensworks/eslint-config": "^3.1.0",
     "@types/jest": "^30.0.0",
-    "@types/node": "^24.0.0",
+    "@types/node": "^26.0.0",
     "@types/rdf-dataset-indexed": "^0.4.3",
     "coveralls": "^3.0.0",
     "eslint": "^8.21.0",
